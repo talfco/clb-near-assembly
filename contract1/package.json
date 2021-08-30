@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "lint:fix": "asb fmt \"assembly/**/*.ts\"",
+    "lint": "asb fmt \"assembly/**/*.ts\" --lint",
+    "clean": "rm -rf ./build",
+    "build:untouched": "asb assembly/index.ts --target debug",
+    "build:optimized": "asb assembly/index.ts --target release",
+    "build": "npm run build:untouched && npm run build:optimized",
+    "test": "yarn test:unit",
+    "test:unit": "asp --verbose -f unit.spec",
+    "test:simulate:vm": "yarn near-vm",
+    "test:simulate:vm:greeting": "yarn test:simulate:vm --wasm-file build/untouched.wasm --method-name sayMyName"
+  },
+  "devDependencies": {
+    "@as-pect/cli": "^6.2.4",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "assemblyscript": "^0.18.7",
+    "asbuild": "latest",
+    "eslint": "^7.17.0",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@assemblyscript/loader": "^0.18.7"
+  }
+}
