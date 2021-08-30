@@ -1,0 +1,6 @@
+{
+  "workspaces": [
+    "contract1"
+  ],
+  "outDir": "./out"
+}

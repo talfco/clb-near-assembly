@@ -9,6 +9,7 @@
     "test": "yarn test:unit",
     "test:unit": "asp --verbose -f unit.spec",
     "test:simulate:vm": "yarn near-vm",
+    "near-vm": "node bin/bin.js",
     "test:simulate:vm:greeting": "yarn test:simulate:vm --wasm-file build/untouched.wasm --method-name sayMyName"
   },
   "devDependencies": {
